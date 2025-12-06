@@ -66,12 +66,12 @@ void Move(stack *from, stack *to, char src, char dst, stack *pegs[3], char names
 void Hanoi(int n, stack *A, stack *C, stack *B, 
            stack *pegs[3], char names[3], char nameA, char nameC, char nameB) {
 
-    if (n == 0) return;
+    if (n != 0){
 
     Hanoi(n - 1, A, B, C, pegs, names, nameA, nameB, nameC);
     Move(A, C,nameA, nameC, pegs, names);
     Hanoi(n - 1, B, C, A, pegs, names, nameB, nameC, nameA);
-}
+}}
 
 // main
 int main() {
